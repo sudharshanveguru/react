@@ -1,0 +1,27 @@
+import React, { useState } from 'react';
+
+const App = () => {
+  // State to manage credit card points
+  const [points, setPoints] = useState(1000); // Initial points
+
+  // Function to handle point exchange
+  const exchangePoints = () => {
+    // Assuming each gift card costs 100 points
+    if (points >= 100) {
+      setPoints(points - 100); // Deduct points
+      alert('Gift card redeemed successfully!');
+    } else {
+      alert('Insufficient points to redeem a gift card.');
+    }
+  };
+
+  return (
+    <div className="App">
+      <h1>Credit Card Points</h1>
+      <p>Total Points: {points}</p>
+      <button onClick={exchangePoints}>Exchange Points for Gift Card</button>
+    </div>
+  );
+};
+
+export default App;
